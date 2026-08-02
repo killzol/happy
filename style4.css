@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Neucha', cursive;
+  background: linear-gradient(150deg, #fbe4ec 0%, #f6cbd9 45%, #eab4c9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 24px;
+}
+
+/* ---- Летящие лепестки на фоне ---- */
+.petals-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.petal-fall {
+  position: absolute;
+  top: -8%;
+  font-size: 18px;
+  opacity: 0.7;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  user-select: none;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.8; }
+  100% {
+    transform: translateY(110vh) translateX(30px) rotate(200deg);
+    opacity: 0;
+  }
+}
+
+/* ---- Открытка ---- */
+.postcard {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  background: #fffaf7;
+  border-radius: 18px;
+  box-shadow: 0 24px 60px rgba(120, 40, 70, 0.28);
+  padding: 10px;
+  animation: openCard 0.9s ease;
+}
+
+@keyframes openCard {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.postcard-inner {
+  border: 2px solid rgba(200, 120, 150, 0.35);
+  border-radius: 12px;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.postcard-title {
+  font-family: 'Marck Script', cursive;
+  font-size: 48px;
+  color: #b3466b;
+  margin-bottom: 22px;
+  text-shadow: 0 2px 10px rgba(179, 70, 107, 0.2);
+}
+
+.postcard-text {
+  font-family: 'Neucha', cursive;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #6b3550;
+}
+
+.postcard-text p {
+  margin-bottom: 18px;
+}
+
+.signature {
+  margin-top: 20px;
+  font-family: 'Marck Script', cursive;
+  font-size: 26px;
+  color: #b3466b;
+}
+
+/* ---- Кнопка музыки ---- */
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 6px 18px rgba(120, 40, 70, 0.25);
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.music-toggle:hover {
+  transform: scale(1.08);
+}
+
+.music-toggle.playing {
+  animation: musicPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes musicPulse {
+  0%, 100% { box-shadow: 0 6px 18px rgba(120, 40, 70, 0.25); }
+  50% { box-shadow: 0 6px 24px rgba(255, 95, 143, 0.55); }
+}
+
+.autoplay-hint {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.9);
+  color: #b3466b;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-family: 'Neucha', cursive;
+  font-size: 15px;
+  box-shadow: 0 6px 18px rgba(120, 40, 70, 0.25);
+}

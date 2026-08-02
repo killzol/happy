@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Наша галерея</title>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+  <!-- Размытые "живые" фото на заднем фоне (генерируются в script2.js) -->
+  <div class="bg-collage" id="bgCollage"></div>
+  <div class="bg-overlay"></div>
+
+  <header class="top-bar">
+    <h1 class="page-title">Наши воспоминания</h1>
+
+    <div class="search-wrap">
+      <input
+        type="text"
+        id="searchInput"
+        class="search-input"
+        placeholder="Введи дату: дд.мм.гггг"
+        inputmode="numeric"
+        maxlength="10"
+        autocomplete="off"
+      >
+      <button id="clearSearch" class="clear-btn" title="Показать все">✕</button>
+    </div>
+  </header>
+
+  <!-- Справочник дат в углу -->
+  <button id="refToggle" class="ref-toggle" title="Справочник дат">📅</button>
+  <aside id="refPanel" class="ref-panel">
+    <div class="ref-panel-header">
+      <span>Справочник дат</span>
+      <button id="refClose" class="ref-close">✕</button>
+    </div>
+    <div id="refList" class="ref-list"></div>
+  </aside>
+
+  <main class="stage">
+    <p id="hintText" class="hint-text">Введи дату выше или выбери её из справочника —<br>и нужный кадр всплывёт из воспоминаний ✨</p>
+    <p id="noResults" class="no-results" hidden>На эту дату пока ничего нет 🔍</p>
+    <div id="resultsArea" class="results-area"></div>
+  </main>
+
+  <div class="heart-card">
+    <button id="heartBtn" class="heart-btn" title="Дальше">
+      <svg viewBox="0 0 24 24" class="heart-svg">
+        <defs>
+          <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ff8fb1"/>
+            <stop offset="100%" stop-color="#ff5f8f"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#heartGrad)" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </button>
+    <p class="heart-caption">нажми, чтобы узнать больше</p>
+  </div>
+
+  <script src="script2.js"></script>
+</body>
+</html>

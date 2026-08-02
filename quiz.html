@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Пара вопросов...</title>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style-quiz.css">
+</head>
+<body>
+
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <div class="progress-dots" id="progressDots">
+    <span class="dot active" data-dot="1"></span>
+    <span class="dot" data-dot="2"></span>
+    <span class="dot" data-dot="3"></span>
+  </div>
+
+  <main class="quiz-card">
+
+    <!-- Шаг 1 -->
+    <section class="step" data-step="1">
+      <h1 class="quiz-question">Ты любишь меня?</h1>
+      <div class="quiz-buttons" id="step1Buttons">
+        <button id="yesBtn" class="quiz-btn yes-btn" type="button">Да</button>
+        <button id="noBtn" class="quiz-btn no-btn" type="button">Нет</button>
+      </div>
+      <p id="teaseText" class="tease-text">&nbsp;</p>
+    </section>
+
+    <!-- Шаг 2 -->
+    <section class="step" data-step="2" hidden>
+      <h1 class="quiz-question">У кого сегодня праздник?</h1>
+      <div class="quiz-buttons">
+        <button class="quiz-btn option-btn" type="button" data-next="3">У меня</button>
+        <button class="quiz-btn option-btn" type="button" data-next="3">У тебя</button>
+      </div>
+      <p class="step-hint">здесь нет неправильного ответа 😉</p>
+    </section>
+
+    <!-- Шаг 3 -->
+    <section class="step" data-step="3" hidden>
+      <h1 class="quiz-question">Как я тебя чаще всего называю?</h1>
+      <div class="quiz-buttons options-grid" id="nicknameButtons">
+        <button class="quiz-btn option-btn" type="button" data-correct="false">Зая</button>
+        <button class="quiz-btn option-btn" type="button" data-correct="false">Котя</button>
+        <button class="quiz-btn option-btn" type="button" data-correct="false">Солнышко</button>
+        <button class="quiz-btn option-btn" type="button" data-correct="false">Золотце</button>
+        <button class="quiz-btn option-btn" type="button" data-correct="true">Кисуня</button>
+      </div>
+      <p id="nicknameMsg" class="tease-text">&nbsp;</p>
+    </section>
+
+  </main>
+
+  <script src="script-quiz.js"></script>
+</body>
+</html>

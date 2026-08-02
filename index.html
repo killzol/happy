@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Секрет</title>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <main class="card">
+    <div class="lock-icon">🔒</div>
+    <h1>У тебя есть ключ?</h1>
+    <p class="subtitle">Введи дату, и дверь откроется</p>
+
+    <form id="passForm" autocomplete="off">
+      <input
+        type="text"
+        id="passInput"
+        class="pass-input"
+        placeholder="дд.мм.гггг"
+        inputmode="numeric"
+        maxlength="10"
+        autocomplete="off"
+      >
+      <button type="submit" id="submitBtn" class="submit-btn">Открыть</button>
+    </form>
+
+    <p class="hint">Подсказка: год — Лахта</p>
+
+    <p id="message" class="message"></p>
+    <p id="attemptsLeftText" class="attempts">Осталось попыток: 5</p>
+  </main>
+
+  <script src="script1.js"></script>
+</body>
+</html>

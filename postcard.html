@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Открытка</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Neucha&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style4.css">
+</head>
+<body>
+
+  <div class="petals-bg" id="petalsBg"></div>
+
+  <!-- Музыка: положи свой файл рядом с этой страницей и назови его song.mp3 -->
+  <audio id="bgAudio" loop preload="auto">
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicToggle" class="music-toggle" title="Включить/выключить музыку">🔈</button>
+
+  <main class="postcard">
+    <div class="postcard-inner">
+      <h1 class="postcard-title">С любовью и Днем рождения</h1>
+
+      <div class="postcard-text">
+        <p>
+          Твой день рождения зай это лучший праздник года —<br>
+          Ты лучшее что в этом мире случалось, день рождения тому факт, <em>кисуня</em>
+          не грусти и не расстраивайся, с тобой рядом столько любищих людей.
+        </p>
+        <p>
+          Спасибо, что ты есть.<br>
+          Люблю целую 💫 <br>
+          <em>[ps]в попу</em>
+        </p>
+      </div>
+
+      <div class="signature">— Твоя Карамелька</div>
+    </div>
+  </main>
+
+  <div id="autoplayHint" class="autoplay-hint" hidden>
+    Нажми на 🔈, чтобы включить кое что)))
+  </div>
+
+  <script src="script4.js"></script>
+</body>
+</html>
