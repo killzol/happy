@@ -6,13 +6,15 @@
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
   background: linear-gradient(135deg, #2b0f2e 0%, #5b1a3a 45%, #8a2f4d 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
+  padding: 20px 20px calc(20px + env(safe-area-inset-bottom));
 }
 
 /* ---- Floating hearts background ---- */
